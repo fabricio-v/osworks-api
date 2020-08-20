@@ -17,7 +17,7 @@ public class ClienteController {
     
     @GetMapping("/cliente")
     public String cliente(){
-        return "teste cliente";
+        return "teste cliente2";
     }
     
 }
