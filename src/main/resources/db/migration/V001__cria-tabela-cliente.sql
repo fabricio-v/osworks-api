@@ -1,10 +1,7 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  Fabricio
- * Created: 26/08/2020
- */
-
+CREATE TABLE cliente (
+	id BIGINT auto_increment NOT NULL,
+	nome varchar(60) NOT NULL,
+	email varchar(255) NOT NULL,
+	telefone varchar(20) NOT NULL,
+	primary key (id)
+);
