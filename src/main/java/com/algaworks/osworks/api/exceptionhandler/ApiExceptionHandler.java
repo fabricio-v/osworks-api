@@ -8,6 +8,7 @@ package com.algaworks.osworks.api.exceptionhandler;
 import com.algaworks.osworks.domain.exception.NegocioException;
 import com.algaworks.osworks.domain.model.Cliente;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -42,7 +43,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         Problema problema = new Problema();
         problema.setStatus(status.value());
         problema.setTitulo(ex.getMessage());
-        problema.setDataHora(LocalDateTime.now());
+        problema.setDataHora(OffsetDateTime.now());
         
         return handleExceptionInternal(ex, problema, new HttpHeaders(), status, request);
         
@@ -62,7 +63,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         Problema problema = new Problema();
         problema.setStatus(status.value());
         problema.setTitulo("Um ou mais campos estão invalidos. Faça o preenchimento correto e tente novamente.");
-        problema.setDataHora(LocalDateTime.now());
+        problema.setDataHora(OffsetDateTime.now());
         problema.setCampos(campos);
 
         return super.handleExceptionInternal(ex, problema, headers, status, request);

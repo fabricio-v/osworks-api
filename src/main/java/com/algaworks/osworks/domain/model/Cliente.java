@@ -5,6 +5,7 @@
  */
 package com.algaworks.osworks.domain.model;
 
+import com.algaworks.osworks.domain.ValidationGroups;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -23,6 +25,7 @@ import javax.validation.constraints.Size;
 public class Cliente {
 
     @Id
+    @NotNull(groups = ValidationGroups.ClienteId.class) //informa que a validação dessa propiedade pertence ao grupo de validação  ValidationGroups.ClienteId.class
     @GeneratedValue(strategy = GenerationType.IDENTITY) //usa a forma nativa do BD
     private Long id;
 
