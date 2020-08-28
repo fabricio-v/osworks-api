@@ -38,5 +38,4 @@ public class GestaoOrdemServicoService {
 
         return ordemServicoRepository.save(ordemServico);
     }
-
 }
